@@ -97,7 +97,7 @@ function shareWebsite() {
             text: 'Check out My awesome Portfolio',
             url: 'https://praveendas.netlify.app/',
         })
-        .then(() => console.error('Shared successfull'))
+        .then(() => console.log('Shared successfull'))
         .catch((error) => console.error('Error sharing:', error));
     } else {
         alert('Web Share API is not supported on this browser.');
