@@ -87,3 +87,19 @@ var typed = new Typed('#typed-animate', {
     backspeed: 20,
     loop: true
 });
+
+
+// sharing Webiste page function 
+function shareWebsite() {
+    if (navigator.share) {
+        // Use the Web Share API to share the image
+        navigator.share({
+            text: 'Check out My awesome Portfolio',
+            url: 'https://praveendas.netlify.app/',
+        })
+        .then(() => console.error('Shared successfull'))
+        .catch((error) => console.error('Error sharing:', error));
+    } else {
+        alert('Web Share API is not supported on this browser.');
+    }
+}

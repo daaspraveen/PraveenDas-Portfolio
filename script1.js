@@ -91,12 +91,20 @@ const projects = [
     },
     */
 ];
+const skillsData = [
+    { category: 'Frontend', skills: ['HTML', 'CSS', 'JS', 'React', 'JSON', 'jQuery','Responsive Web Design'] },
+    { category: 'Backend', skills: ['Node.js', 'Python', 'RESTful API'] },
+    { category: 'Database', skills: ['SQL', 'MySQL','MangoDB'] },
+    { category: 'UX Design', skills: ['Figma', 'Wireframing', 'User-Centered Design','Prototyping'] },
+    { category: 'Dev Tools', skills: ['Git','GitHub','Command Line'] },
+    { category: 'Soft Skills', skills: ['Problem Solving', 'Communication', 'Continuous Learner','Team Collaboration'] },
+    /*
+    { category: '', skills: [] },
+    */
+];
 
+// Function to create and append Project article elements
 
-// Get the container element
-const projectsContainer = document.getElementById("projects-container");
-
-// Function to create and append article elements
 function createProjectElement(project) {
     const article = document.createElement("article");
     article.setAttribute("class","project-box flex");
@@ -118,6 +126,7 @@ function createProjectElement(project) {
     a.href = project.project_link;
     a.textContent = "Live";
     a.target = "_blank";
+    a.rel="noopener";
     a.setAttribute("class","project-link");
 
     article.appendChild(img);
@@ -128,43 +137,50 @@ function createProjectElement(project) {
     return article;
 }
 
-// Loop through the projects array and append article elements to the container
-const limitedProjects = projects.slice(0, 6 /* projects.length */);
+// after window loads program runs ....
 
-limitedProjects.forEach(project => {
-    const projectElement = createProjectElement(project);
-    projectsContainer.appendChild(projectElement);
-});
+const window_location = window.location.pathname.split('/').pop();
 
-// Skills content
-document.addEventListener('DOMContentLoaded', function () {
-    const skillsData = [
-      { category: 'Frontend', skills: ['HTML', 'CSS', 'JS', 'React', 'JSON', 'jQuery','Responsive Web Design'] },
-      { category: 'Backend', skills: ['Node.js', 'Python', 'RESTful API'] },
-      { category: 'Database', skills: ['SQL', 'MySQL','MangoDB'] },
-      { category: 'UX Design', skills: ['Figma', 'Wireframing', 'User-Centered Design','Prototyping'] },
-      { category: 'Dev Tools', skills: ['Git','GitHub','Command Line'] },
-      { category: 'Soft Skills', skills: ['Problem Solving', 'Communication', 'Continuous Learner','Team Collaboration'] }
-    ];
+if (window_location === "projects.html") {
+    // for all projects page 
+    const AllProjectsContainer = document.getElementById("all-projects-container");
+    const unlimitedProjects = projects.slice(0, projects.length - 1);
+    unlimitedProjects.forEach(project => {
+        const projectElement = createProjectElement(project);
+        AllProjectsContainer.appendChild(projectElement);
+    });
+}
 
+if (window_location === "index.html") {
+    // Get the container element
+    const projectsContainer = document.getElementById("projects-container");
+
+    // Loop through the projects array and append article elements to the container
+    const limitedProjects = projects.slice(0, 6 /* projects.length */);
+    limitedProjects.forEach(project => {
+        const projectElement = createProjectElement(project);
+        projectsContainer.appendChild(projectElement);
+    });
+
+    // Skills content
     const skillsBoxes = document.querySelector('.skills-boxes');
 
     skillsData.forEach(categoryobj => {
         const categoryArticle = document.createElement('article');
-        categoryArticle.setAttribute("class","all-skill-box flex");
+        categoryArticle.setAttribute("class", "all-skill-box flex");
         const h3 = document.createElement('h3');
-        h3.setAttribute("class","skills-category-head");
-            
+        h3.setAttribute("class", "skills-category-head");
+
         h3.textContent = categoryobj.category;
         categoryArticle.appendChild(h3);
 
         categoryobj.skills.forEach(skill => {
             const span = document.createElement('span');
-            span.setAttribute("class","skill-span");
+            span.setAttribute("class", "skill-span");
             span.textContent = skill;
             categoryArticle.appendChild(span);
         });
 
         skillsBoxes.appendChild(categoryArticle);
     });
-});
+}
