@@ -82,9 +82,9 @@ hamburgerOptionLinks.forEach((link)=>{
 
 // TYPING TEXT ROLES ANIMATION BY CDN 
 var typed = new Typed('#typed-animate', {
-    strings: ['Front-End Developer', 'Web Developer'],
-    typeSpeed: 40,
-    backspeed: 20,
+    strings: ['Front-End', 'Web'],
+    typeSpeed: 90,
+    backspeed: 10,
     loop: true
 });
 
@@ -96,6 +96,7 @@ function shareWebsite() {
         navigator.share({
             text: 'Check out My awesome Portfolio',
             url: 'https://praveendas.netlify.app/',
+            image:"media/daspic.png"
         })
         .then(() => console.log('Shared successfull'))
         .catch((error) => console.error('Error sharing:', error));

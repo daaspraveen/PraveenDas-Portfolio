@@ -263,6 +263,7 @@ main >section:nth-child(even){
     line-height: 2.8rem;
     white-space: wrap;
     text-overflow: ellipsis;
+    position: relative;
 }
 #greetings {
     font-size: clamp(30px,3rem,48px);
@@ -272,14 +273,20 @@ main >section:nth-child(even){
     font-size: 2rem;
     color: rgb(56, 142, 192);
 }
-#typed-animate{
+.typed-animate-text {
+    flex-direction: column;
+}
+#typed-animate, .developer-text{
     color: rgb(139, 58, 239);
     font-size: 2rem;
     font-size: clamp(30px,2rem,48px);
-    overflow-wrap: break-word;
-    white-space:wrap;
+}
+#typed-animate{
+    text-wrap: nowrap;
+    overflow-wrap: normal;
     text-overflow: clip;
 }
+ 
 #intro-img-box{
     object-fit: contain;
     position: relative;
@@ -403,7 +410,7 @@ main >section:nth-child(even){
     width: min-content;
     height: min-content;
     background-color: var(--projectBox-theme);
-    background-color: #ddd;
+    background-color: #5c46aa57;
     border-radius: 8px;
     padding-bottom: 15px;
     cursor: pointer;
@@ -431,12 +438,10 @@ main >section:nth-child(even){
     padding: 5px 2px;
     font-size: 1.3rem;
     font-weight: 900;
-    color:royalblue;
-    text-shadow: 1px 1px 2px whitesmoke;
+    text-shadow: 0px 0px 1px var(--current-theme);
     font-family: var(--h3-font-family);
 }
 .proj-short-info{
-    color: #162748;
     padding-inline: 2px;
 }
 .project-link{
@@ -447,7 +452,7 @@ main >section:nth-child(even){
     padding: 5px 8px 5px 20px;
     border-radius: 20px;
     font-family: var(--a-font-family);
-    background-color: #eee;
+    background-color: var(--current-theme);
     filter: blur(2px);
     transition: opacity 0.2s ease-in-out;
 }
@@ -573,7 +578,7 @@ main >section:nth-child(even){
     font-size: clamp(20px,1.5rem,24px);
 }
 .aboutus-content span{
-    color: red;
+    color: #007dda;
     font-size: 1.5rem;
 }
 /****************************************************************************************/
@@ -588,7 +593,7 @@ main >section:nth-child(even){
 }
 .all-skill-box{
     width: 300px;
-    background-color: lightseagreen;
+    background-color: #5c46aa57;
     padding: 10px 5px;
     justify-content: center;
     align-items: flex-start;
@@ -599,8 +604,8 @@ main >section:nth-child(even){
 .skills-category-head{
     font-size: clamp(20px,1.3rem,24px);
     margin-bottom: 3px;
-    text-shadow: 0 0 5px black;
-    color: antiquewhite;
+    text-shadow: 0 0 5px var(--current-theme);
+    color: var(--font-color);
     width: 100%;
     font-family: var(--h3-font-family);
 }
@@ -612,7 +617,7 @@ main >section:nth-child(even){
     font-family: var(--para-font-family);
     font-size: clamp(16px,1rem,24px);
     color: #162748;
-    background-color: lightblue;
+    background-color: #92a7ca91;
 }
 /****************************************************************************************/
 /******* CONTACT SECTION ****************/
@@ -625,7 +630,7 @@ main >section:nth-child(even){
     flex-wrap: wrap;
 }
 .contact-1 > img{
-    max-width: 500px;
+    max-width: 300px;
     min-width: 100px;
 }
 .contact-1 > img{
@@ -652,13 +657,16 @@ main >section:nth-child(even){
     a{
         justify-content: space-between;
         column-gap: 15px;
+        transition: transform 2s ease-in-out;
     }
     a img{
         width: 45px;
+        
     }
 }
 .contact-info a :hover{
-    transform: scale(1.1);
+    transform: scale(1.02);
+    border-radius: 50%;
 }
 .social-box{
     flex-wrap: wrap;
@@ -669,12 +677,16 @@ main >section:nth-child(even){
         width: 100%;
         font-size: clamp(16px,1.3rem,24px);
     }
+    a{
+        transition: transform 3s ease-in-out;
+    }
     a :hover{
-        box-shadow: 1px 1px 10px #ccc ,-1px 1px 10px #ccc ,1px -1px 10px #ccc,-1px -1px 10px #ccc;
+        box-shadow: 0px 0px 5px var(--font-color);
+        transform: scale(1.02);
     }
     a img{
         width: 35px;
-        border-radius: 8px;
+        border-radius: 10px;
         background-color: var(--font-light-theme);
     }
 }
