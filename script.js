@@ -14,7 +14,7 @@ const themegif = document.getElementById("themegif");
     
 themegif.addEventListener("click", () => {
     themegif.classList.toggle("rotate360");
-    if (themegif.src.includes("theme-sun 2.png")) {
+    if (themegif.src.includes("theme-sun")) {
         // sets dark theme
         themegif.src = "media/theme-moon 2.png";
         root.style.setProperty("--current-theme", darkThemeColor);
