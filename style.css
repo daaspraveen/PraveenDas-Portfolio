@@ -240,10 +240,10 @@ main section >p{
     margin-bottom: 5px;
 }
 main >section:nth-child(odd){
-    background-image: linear-gradient(0deg,#FFDEE9 29%, #B5FFFC 70%);
+    background-image: linear-gradient(180deg, #3a3a3a 46%, #040404 100%)
 }
 main >section:nth-child(even){
-    background-image: linear-gradient(180deg,#FFDEE9 29%, #B5FFFC 70%);
+    background-image: linear-gradient(0deg, #3a3a3a 46%, #040404 100%)
 }
 
 /****************************************************************************************/
