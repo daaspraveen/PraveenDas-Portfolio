@@ -10,13 +10,13 @@ const evenSections = document.querySelectorAll('.main Section:nth-child(even)');
 // Select ODD sections
 const oddSections = document.querySelectorAll('.main Section:nth-child(odd)');
 
-const themegif = document.getElementById("themegif");;
+const themegif = document.getElementById("themegif");
     
 themegif.addEventListener("click", () => {
     themegif.classList.toggle("rotate360");
     if (themegif.src.includes("theme-sun 2.png")) {
         // sets dark theme
-        themegif.src = "media/theme-moon 2.png";
+        themegif.src = "media/theme-moon.png";
         root.style.setProperty("--current-theme", darkThemeColor);
         root.style.setProperty("--font-color", "antiquewhite")
         Hamburger_box_Color = darkThemeColor;
@@ -96,7 +96,7 @@ function shareWebsite() {
         // Use the Web Share API to share the image
         navigator.share({
             text: 'Check out My awesome Portfolio',
-            url: 'https://praveendas.netlify.app/',
+            url: 'https://praveendas.site/',
             image:"media/daspic.png"
         })
         .then(() => console.log('Shared successfull'))
