@@ -10,10 +10,27 @@ const evenSections = document.querySelectorAll('.main Section:nth-child(even)');
 // Select ODD sections
 const oddSections = document.querySelectorAll('.main Section:nth-child(odd)');
 
-const themegif = document.getElementById("themegif");
+const themegif = document.getElementById("themegif");;
+    
 themegif.addEventListener("click", () => {
     themegif.classList.toggle("rotate360");
-    if (themegif.src.includes("theme-moon")) {
+    if (themegif.src.includes("theme-sun 2.png")) {
+        // sets dark theme
+        themegif.src = "media/theme-moon 2.png";
+        root.style.setProperty("--current-theme", darkThemeColor);
+        root.style.setProperty("--font-color", "antiquewhite")
+        Hamburger_box_Color = darkThemeColor;
+
+        evenSections.forEach(section => {
+            section.style.backgroundImage = 'linear-gradient(180deg, #3a3a3a 46%, #040404 100%)';
+        });
+        oddSections.forEach(section => {
+            section.style.backgroundImage = 'linear-gradient(0deg, #3a3a3a 46%, #040404 100%)';
+        });
+
+        Body.style.backgroundImage = 'linear-gradient(0deg, #3a3a3a 46%, #040404 100%)';
+    }
+    else {
         // sets light theme 
         themegif.src = "media/theme-sun 2.png";
         root.style.setProperty("--current-theme", lightThemeColor);
@@ -29,22 +46,6 @@ themegif.addEventListener("click", () => {
         });
 
         Body.style.backgroundImage = 'linear-gradient(0deg, #FFDEE9 29%, #B5FFFC 70%)'
-
-    } else {
-        // sets dark theme
-        themegif.src = "media/theme-moon 2.png";
-        root.style.setProperty("--current-theme", darkThemeColor);
-        root.style.setProperty("--font-color", "antiquewhite")
-        Hamburger_box_Color = darkThemeColor;
-
-        evenSections.forEach(section => {
-            section.style.backgroundImage = 'linear-gradient(180deg, #3a3a3a 46%, #040404 100%)';
-        });
-        oddSections.forEach(section => {
-            section.style.backgroundImage = 'linear-gradient(0deg, #3a3a3a 46%, #040404 100%)';
-        });
-
-        Body.style.backgroundImage = 'linear-gradient(0deg, #3a3a3a 46%, #040404 100%)';
     }
 }); // Theme Changing Event ********************************
 
