@@ -16,7 +16,7 @@ themegif.addEventListener("click", () => {
     themegif.classList.toggle("rotate360");
     if (themegif.src.includes("theme-sun 2.png")) {
         // sets dark theme
-        themegif.src = "media/theme-moon.png";
+        themegif.src = "media/theme-moon 2.png";
         root.style.setProperty("--current-theme", darkThemeColor);
         root.style.setProperty("--font-color", "antiquewhite")
         Hamburger_box_Color = darkThemeColor;
