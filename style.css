@@ -23,10 +23,10 @@
     --box-light-theme:  #82c4da;
     --box-dark-theme: #5492a6 ;
 
-    --current-theme: var(--font-light-theme);
-    --font-color: var(--font-dark-theme);
+    --current-theme: var(--font-dark-theme);
+    --font-color: var(--font-light-theme);
 
-    --projectBox-theme: var(--box-light-theme);    
+    --projectBox-theme: var(--box-dark-theme);    
 
     --logo-font-family: 'Lavishly Yours',cursive;
     --h1-font-family: "Goldman",monospace;
