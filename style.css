@@ -60,7 +60,7 @@ body{
     position: relative;
     box-sizing: border-box;
     overflow-x: hidden;
-    background-color: #FFDEE9;
+    background-color: #000;
 }
 body::-webkit-scrollbar {
     width: 5px;
